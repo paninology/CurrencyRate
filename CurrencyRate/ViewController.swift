@@ -11,7 +11,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var currencyTableView: UITableView!
     
-    var currency = Currency(currencyRate: 1200, koreanWon: 0, USDoller: 0)
+    var currency = [
+        Currency(currencyName: "USD",currencyRate: 1200, koreanWon: 0, foreignCurrency: 0),
+        
+    ]
+//    {
+//        didSet {
+//            currencyTableView.reloadData()
+//        }
+//    }
+    var ddd = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,18 +30,42 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
        
     }
+    @objc func enterButtonClicked(sender: UIButton) {
+        view.endEditing(true)
+        // 여기서 텍스트필드값을 어떻게 받아오느냐ㅣ........현재로서는 키보드 엔터를 반드시 쳐야 입력됨
+        currencyTableView.reloadData()
+    }
+    
+    @objc func userTextFieldEntered(sender: UITextField) {
+
+        currency[sender.tag].exchangeWonToDoller = Double(sender.text!)!
+        print(currency[sender.tag].exchangeWonToDoller)
+
+//        sender.text = nil
+       
+        
+    }
+    
+    func updateLabels() {
+        
+    }
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        currency.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = currencyTableView.dequeueReusableCell(withIdentifier: CurrencyTableViewCell.identifier, for: indexPath) as? CurrencyTableViewCell else { return UITableViewCell()}
-        cell.enterButton.tag = indexPath.row
         
-        cell.currencyLabel.text = "\(currency.currencyRate)won/$"
-        cell.resultLabel.text = "\(currency.exchangeWonToDoller)"
+        cell.userTextField.tag = indexPath.row
+        cell.userTextField.placeholder = "한화 액수 입력"
+        cell.userTextField.addTarget(self, action: #selector(userTextFieldEntered), for: .editingDidEndOnExit)
+        
+        cell.enterButton.addTarget(self, action: #selector(enterButtonClicked), for: .touchUpInside)
+        
+        cell.currencyLabel.text =   "\(currency[indexPath.row].currencyRate)won/\(currency[indexPath.row].currencyName)"  // currency로 옮길것 컴퓨티드로
+        cell.resultLabel.text = "\((round(currency[indexPath.row].exchangeWonToDoller*100)/100))\(currency[indexPath.row].currencyName)"
         
         return cell
     }

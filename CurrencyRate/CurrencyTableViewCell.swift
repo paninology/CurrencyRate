@@ -13,12 +13,12 @@ class CurrencyTableViewCell: UITableViewCell {
     
     @IBOutlet weak var resultLabel: UILabel!
     
-    @IBOutlet weak var useTextField: UITextField!
+    @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var enterButton: UIButton!
     
     static let identifier = "CurrencyTableViewCell"
     
-    @IBAction func enterButtonClicked(_ sender: UIButton) {
+    @IBAction func enterButtonClicked(_ sender: UIButton) { // 지울것
     }
     
     

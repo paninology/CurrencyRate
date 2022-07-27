@@ -28,7 +28,7 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOy-5M-aXq">
-                        <rect key="frame" x="0.0" y="21" width="130" height="42"/>
+                        <rect key="frame" x="0.0" y="18" width="130" height="45"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="130" id="UVf-r2-2nk"/>
                         </constraints>
@@ -42,11 +42,11 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcC-k1-fa6">
-                        <rect key="frame" x="0.0" y="0.0" width="130" height="21"/>
+                        <rect key="frame" x="0.0" y="0.0" width="130" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="130" id="yXk-Hq-23N"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -71,7 +71,7 @@
                 <outlet property="currencyLabel" destination="DcC-k1-fa6" id="o7L-30-owd"/>
                 <outlet property="enterButton" destination="JJ6-sJ-pTj" id="qTV-nG-dD2"/>
                 <outlet property="resultLabel" destination="mOy-5M-aXq" id="nRi-cl-K10"/>
-                <outlet property="useTextField" destination="X5G-eA-7hE" id="Bjq-sV-I69"/>
+                <outlet property="userTextField" destination="X5G-eA-7hE" id="Bjq-sV-I69"/>
             </connections>
             <point key="canvasLocation" x="225.36231884057972" y="135.60267857142856"/>
         </tableViewCell>

@@ -8,9 +8,10 @@
 import Foundation
 
 struct Currency {
+    var currencyName: String
     var currencyRate: Double
     var koreanWon: Double
-    var USDoller: Double
+    var foreignCurrency: Double
     
     var exchangeWonToDoller: Double {
         get {
