@@ -21,4 +21,7 @@ struct Currency {
             koreanWon = newValue
         }
     }
+//    var result : String {
+//        
+//    }
 }
